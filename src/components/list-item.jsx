@@ -5,7 +5,7 @@ const ListItem = ({ item }) => {
 				className="text-text font-semibold text-[15px] hover:text-accent"
 				href="#"
 			>
-				Services
+				{item}
 			</a>
 		</li>
 	);
