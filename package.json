@@ -12,6 +12,7 @@
   "dependencies": {
     "pnpm": "^8.6.11",
     "react": "^18.2.0",
+    "react-colorful": "^5.6.1",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
