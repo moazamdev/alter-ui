@@ -8,7 +8,6 @@ const ControlButton = ({
 	buttonText,
 	buttonType = "color",
 }) => {
-	// const [colorValue, setter] = useState(colorValue);
 	const [displayBox, setDisplayBox] = useState(false);
 
 	const textColor =
@@ -16,8 +15,7 @@ const ControlButton = ({
 
 	return buttonType == "color" ? (
 		<div
-			onClick={(e) => {
-				e.stopPropagation();
+			onClick={() => {
 				setDisplayBox(!displayBox);
 			}}
 			className={`relative font-semibold text-center uppercase tracking-[2px] text-[13px] px-[30px] py-[20px] rounded-lg select-none cursor-pointer ${textColor}`}
@@ -25,7 +23,10 @@ const ControlButton = ({
 		>
 			{buttonText}
 			{displayBox && (
-				<div className="absolute bottom-[130%] left-0 right-0 w-fit h-auto p-4 bg-[#fff] rounded-lg flex justify-center items-center text-[10px] flex flex-col gap-[10px] cursor-default">
+				<div
+					onClick={(e) => e.stopPropagation()}
+					className="absolute bottom-[130%] left-0 right-0 w-fit h-auto p-4 bg-[#fff] rounded-lg flex justify-center items-center text-[10px] flex flex-col gap-[10px] cursor-default"
+				>
 					<HexColorPicker color={colorValue} onChange={setter} />
 					<HexColorInput
 						color={colorValue}

@@ -6,7 +6,7 @@ const Header = () => {
 	return (
 		<header
 			className="flex flex-col justify-center items-center mx-auto my-0 px-2.5 py-[30px]"
-			style={{ borderBottom: "1px solid rgba(125, 125, 125, 0.4)" }}
+			style={{ borderBottom: "1px solid rgba(125, 125, 125, 0.2)" }}
 		>
 			<div className="container relative w-[min(100%_-_15px,1250px)] flex justify-between mx-auto my-0 px-1.5 sm:px-2.5">
 				<LogoBox />
