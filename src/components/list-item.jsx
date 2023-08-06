@@ -1,8 +1,20 @@
+import React from "react";
+import { useColorContext } from "../color-context";
+
 const ListItem = ({ item }) => {
+	const { text, accent } = useColorContext();
+
 	return (
 		<li>
 			<a
-				className="text-text font-semibold text-[15px] hover:text-accent"
+				style={{ color: text }}
+				onMouseEnter={(e) => {
+					e.target.style.color = accent;
+				}}
+				onMouseLeave={(e) => {
+					e.target.style.color = text;
+				}}
+				className="font-semibold text-[15px]"
 				href="#"
 			>
 				{item}
