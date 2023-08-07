@@ -59,9 +59,9 @@ const ControlBar = () => {
 				<div
 					onClick={() => setIsShowing(!isShowing)}
 					style={{transform: `rotate(${isShowing ? `180deg` : `0deg`})`}}
-					className="select-none cursor-pointer absolute -top-10 left-[45%] bg-white border border-[#ccc] w-14 h-14 rounded-full flex justify-center items-center font-bold text-[2em]"
+					className="select-none cursor-pointer absolute -top-10 left-[45%] bg-white border border-[#ccc] w-14 h-14 rounded-full flex justify-center items-center font-bold text-[1.5em] hover:bg-[#ccc] hover:text-[#333] transition"
 				>
-					^
+					↑
 				</div>
 				{isShowing && (
 					<>
