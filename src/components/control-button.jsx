@@ -18,7 +18,7 @@ const ControlButton = ({
 			onClick={() => {
 				setDisplayBox(!displayBox);
 			}}
-			className={`relative font-semibold text-center uppercase tracking-[2px] text-[13px] px-[30px] py-[20px] rounded-lg select-none cursor-pointer ${textColor}`}
+			className={`drop-shadow-2xl mb-4 lg:mb-auto relative font-semibold text-center uppercase tracking-[2px] text-[13px] px-[30px] py-[20px] rounded-lg select-none cursor-pointer ${textColor}`}
 			style={{ background: colorValue }}
 		>
 			{buttonText}
@@ -47,7 +47,7 @@ const ControlButton = ({
 		</div>
 	) : (
 		<div
-			className={`relative bg-white text-black font-semibold text-center uppercase tracking-[2px] text-[13px] px-[30px] py-[20px] rounded-lg select-none cursor-pointer`}
+			className={`relative bg-white mb-4 lg:mb-auto text-black font-semibold text-center uppercase tracking-[2px] text-[13px] px-[30px] py-[20px] rounded-lg select-none cursor-pointer`}
 		>
 			{buttonText}
 		</div>

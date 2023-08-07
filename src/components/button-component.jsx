@@ -3,22 +3,21 @@ import { getTextColor } from "../utils";
 
 const ButtonComponent = ({ text, onClick, theme = "primary" }) => {
 	const { primary, secondary, accent } = useColorContext();
-	// console.log(getTextColor(primary));
 
-	let accentBrightness = getTextColor(accent);
-	let secondaryBrightness = getTextColor(secondary);
+	let accentBrightness = getTextColor(accent) > 0.5 ? "black" : "white";
+	let secondaryBrightness = getTextColor(secondary) > 0.5 ? "black" : "white";
+	let primaryBrightness = getTextColor(primary) > 0.5 ? "black" : "white";
 	let primaryStyles =
 		theme == "primary"
 			? {
 					border: accent,
 					background: accent,
-					// if the contrast is inappropriate, then flip the values
-					color: accentBrightness > 0.5 ? "black" : "white",
+					color: accentBrightness,
 			  }
 			: {
 					border: secondary,
 					background: secondary,
-					color: secondaryBrightness > 0.5 ? "black" : "white",
+					color: secondaryBrightness,
 			  };
 	return (
 		<button
@@ -27,24 +26,20 @@ const ButtonComponent = ({ text, onClick, theme = "primary" }) => {
 			onMouseEnter={(e) => {
 				e.target.style.border = primary;
 				e.target.style.background = primary;
-				e.target.style.color =
-					getTextColor(primary) > 0.5 ? "black" : "white";
+				e.target.style.color = primaryBrightness;
 			}}
 			onMouseLeave={(e) => {
 				if (theme === "primary") {
 					e.target.style.border = accent;
 					e.target.style.background = accent;
-					e.target.style.color =
-						// if the contrast is inappropriate, then flip the values
-						accentBrightness > 0.5 ? "black" : "white";
+					e.target.style.color = accentBrightness;
 				} else {
 					e.target.style.border = secondary;
 					e.target.style.background = secondary;
-					e.target.style.color =
-						secondaryBrightness > 0.5 ? "black" : "white";
+					e.target.style.color = secondaryBrightness;
 				}
 			}}
-			className={`btn border text-[15px] px-[32px] py-[12px] rounded-full font-regular transition`}
+			className={`btn border text-[15px] px-[32px] py-[12px] rounded-full font-regular transition `}
 		>
 			{text}
 		</button>
@@ -52,10 +47,3 @@ const ButtonComponent = ({ text, onClick, theme = "primary" }) => {
 };
 
 export default ButtonComponent;
-
-// className={`btn border hover:border-primary ${
-// 	theme == "primary"
-// 		? "bg-accent text-white hover:bg-primary border-accent"
-// 		: "bg-secondary text-primary hover:bg-primary hover:text-secondary border-secondary "
-// } text-[15px] px-[32px] py-[12px] rounded-full font-regular transition`}
-// >
