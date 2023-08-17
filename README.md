@@ -9,14 +9,11 @@ AlterUI is a dynamic web application designed to help users effortlessly explore
 
 ## Mockups
 
-https://github.com/moazamdev/alter-ui/assets/89134865/5b5d4561-260b-440d-9d9f-adde3ed9f6aa
+https://github.com/moazamdev/alter-ui/assets/89134865/dff56df4-1499-4257-a082-55a1ebb36baf
 
 ## Tech Stack
 - React.js
-- Redux
-- Node.js
-- Express.js
-- MongoDB
+- Tailwind CSS
 
 ## Installation
 - Clone this repository
